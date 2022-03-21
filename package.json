@@ -1,0 +1,14 @@
+{
+    "name": "call-analytics-serverless",
+    "version": "1.1.0",
+    "description": "",
+    "main": "src/index.js",
+    "scripts": {
+      "package": "aws cloudformation package --template-file template.yml --output-template-file output.yml --s3-bucket app-repo-components",
+      "deploy": "aws cloudformation deploy --template-file output.yml --stack-name call-analytics-serverless --capabilities CAPABILITY_IAM --parameter-overrides LanguageCode=en-US",
+      "qd": "npm run package && npm run deploy"
+    },
+    "keywords": ["serverless", "audio", "text"],
+    "author": "Aleksandar Simovic <alexander.simovic@gmail.com>",
+    "license": "MIT"
+  }
